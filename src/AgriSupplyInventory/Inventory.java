@@ -63,5 +63,19 @@ public class Inventory {
 
         return false;
     }
+
+// Manually search for a product by name using Linear Search
+public Product searchProduct(String name) {
+
+    for (int i = 0; i < count; i++) {
+
+        if (products[i].getProductName().equalsIgnoreCase(name)) {
+            return products[i];
+        }
+    }
+
+    return null;
 }
+}
+
 
