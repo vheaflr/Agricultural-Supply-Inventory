@@ -34,6 +34,34 @@ public class Inventory {
 
         count++;
         return true;
+    
     }
 
+ // Display all products
+    public Product[] getProducts() {
+        return products;
+    }
+
+    public int getCount() {
+        return count;
+    }
+// Update a product's stock using its ID
+    public boolean updateStock(String productId, int newQuantity) {
+
+        for (int i = 0; i < count; i++) {
+
+            if (products[i].getProductId().equalsIgnoreCase(productId)) {
+
+                if (newQuantity < 0) {
+                    return false;
+                }
+
+                products[i].setQuantity(newQuantity);
+                return true;
+            }
+        }
+
+        return false;
+    }
 }
+
